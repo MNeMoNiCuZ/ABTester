@@ -1,9 +1,14 @@
 # ABTester
 An A/B tester for sets of images.
 
-Add your images to the static/IMAGES/ folder. Supports PNG and JPG. At least.
+This is a tool where you will have a bunch of images displayed, and you pick your favorite. Repeat this over and over with your image dataset, and see which ones were your favorites.
+
+An example use case is when you have trained an AI model, and you want to get an un-biased test on which epoch/version you think looks better.
+
+# Image Setup
+Add your images in the /static/IMAGES/ folder. Supports PNG and JPG. At least.
 The images will be loaded sequentially, so the file name matters.
-For a They expected format is:
+The expected format is:
 * 01.jpg (Set 1)
 * 02.jpg (Set 2)
 * 03.jpg (Set 3)
