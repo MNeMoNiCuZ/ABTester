@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A/B Tester</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          let statsVisibility = "{{ stats_visibility }}";
+          let statsDisplay = document.getElementById('stats-display');
+          if (statsVisibility === 'visible') {
+            statsDisplay.style.display = 'block';
+          } else {
+            statsDisplay.style.display = 'none';
+          }
+        });
+      
+        function toggleStats() {
+          let statsDisplay = document.getElementById('stats-display');
+          let statsVisibilityInput = document.getElementById('stats_visibility');
+          if (statsDisplay.style.display === 'none') {
+            statsDisplay.style.display = 'block';
+            statsVisibilityInput.value = 'visible';
+          } else {
+            statsDisplay.style.display = 'none';
+            statsVisibilityInput.value = 'hidden';
+          }
+        }
+      </script>
+      
+</head>
+<body>
+    <input type="hidden" id="stats_visibility" name="stats_visibility" value="{{ stats_visibility }}">
+    <div id="menu-bar"></div>
+    <div id="image-grid">
+        {% for set_number, img in images_and_set_numbers %}
+            <div class="image-container">
+                <div class="set-number">Set: {{ set_number }}</div>
+                <a href="{{ url_for('display_set', selected_img=set_number) }}">
+                    <img src="{{ url_for('static', filename='INPUT/'+img) }}" alt="{{ img }}" class="thumbnail">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+<!-- Button menu and stats wrapped in a container -->
+<div id="button-stats-container">
+    <!-- New wrapper for buttons -->
+    <div class="button-wrapper">
+        <a href="{{ url_for('index') }}"><button>Restart</button></a>
+        <button onclick="toggleSets()">Toggle Set Numbers</button>
+        <button onclick="toggleStats()">Toggle Results</button>
+    </div>
+
+    <!-- Collapsible stats section -->
+    <div id="stats-display" style="display:none;">
+        <ul>
+            {% for count in stats %}
+                <li>Set {{ loop.index }}: {{ count }} votes</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+    <script>
+        // Function to toggle the visibility of the stats section
+        function toggleStats() {
+          let statsDisplay = document.getElementById('stats-display');
+          if (statsDisplay.style.display === 'none') {
+            statsDisplay.style.display = 'block';
+            localStorage.setItem('statsVisibility', 'block');
+          } else {
+            statsDisplay.style.display = 'none';
+            localStorage.setItem('statsVisibility', 'none');
+          }
+        }
+
+        // Function to toggle the visibility of the set numbers
+        function toggleSets() {
+            let setNumbers = document.querySelectorAll('.set-number');
+            let currentVisibility = localStorage.getItem('setsVisibility') || 'block';
+
+            newVisibility = currentVisibility === 'block' ? 'none' : 'block';
+
+            setNumbers.forEach(function(element) {
+            element.style.display = newVisibility;
+            });
+
+            localStorage.setItem('setsVisibility', newVisibility);
+        }
+        // Function to set the initial visibility of the set numbers based on the last state saved in localStorage
+        function setInitialSetsVisibility() {
+            let setNumbers = document.querySelectorAll('.set-number');
+            let savedVisibility = localStorage.getItem('setsVisibility') || 'block';
+
+            setNumbers.forEach(function(element) {
+            element.style.display = savedVisibility;
+            });
+        }
+
+        // Call the function to set the initial visibility when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            setInitialStatsVisibility();
+            setInitialSetsVisibility();
+        });
+      
+        // Function to set the initial visibility of the stats section based on the last state saved in localStorage
+        function setInitialStatsVisibility() {
+          let statsDisplay = document.getElementById('stats-display');
+          let savedVisibility = localStorage.getItem('statsVisibility');
+      
+          if (savedVisibility === 'block') {
+            statsDisplay.style.display = 'block';
+          } else {
+            statsDisplay.style.display = 'none';
+          }
+        }
+      
+        // Call the function to set the initial visibility when the page loads
+        document.addEventListener("DOMContentLoaded", setInitialStatsVisibility);
+      </script>
+          
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+
+#image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#landing-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#num-sets {
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    width: 50px;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+}
+
+#num-sets:focus {
+    border-color: #00bcd4;
+}
+
+input[type=submit] {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+    height: 47px;
+}
+
+input[type=submit]:hover {
+    background-color: #00bcd4;
+}
+
+.image-container {
+    margin: 10px;
+    min-width: 200px;
+    max-width: 400px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.thumbnail {
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.set-number {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#menu-bar {
+    height: 50px;
+}
+
+#button-stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  button:hover {
+    background-color: #00bcd4;
+  }
+
+.message-container {
+    text-align: center;
+    margin-top: 10px;
+}
+  
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+  
+.warning-message {
+    color: orange;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out;
+}
+  
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #00bcd4;
+  }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A/B Tester</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div id="landing-container">
+        <form action="/" method="POST">
+            <p></p><label for="num-sets">Number of image sets</label><br></p>
+            <input id="num-sets" name="num_sets" min="1" required placeholder="{{ total_images }}">
+            <input type="submit" value="Go!">
+        </form>
+    </div>
+    <!-- Error and warning messages -->
+    <div class="message-container">
+        {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+        
+        {% if warning_message %}
+        <p class="warning-message">{{ warning_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
