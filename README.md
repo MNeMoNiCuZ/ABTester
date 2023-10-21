@@ -37,3 +37,9 @@ This is the number of images you will compare each time.
 
 Use the buttons below the images to restart, toggle set numbers, or show the results.
 ![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/1a3661ac-e022-4467-879f-cc6b3fc00151)
+
+# Example Uses
+![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/847b3b08-f723-49e6-a036-eab9c18d4d7b)
+![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/2bb9eb42-e0f8-426e-87dd-13cf50a8c0a4)
+![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/2e7842ab-6e56-40c4-8934-7c1825814d9b)
+![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/fdf86ed3-c551-4b53-93b7-43d24c45a2be)
