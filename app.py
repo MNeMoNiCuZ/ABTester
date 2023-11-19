@@ -60,8 +60,7 @@ def display_set():
     current_set = session.get('current_set', 0)
 
     # Shuffle the image sets when the last set is reached and we are resetting to the first set
-    if current_set == 0:
-        shuffle(session['image_sets'])  # Shuffling the image sets
+    shuffle(session['image_sets'])  # Shuffling the image sets
     
     images_to_display = session['image_sets'][current_set]
     images_with_set_numbers = list(zip(range(1, len(images_to_display) + 1), images_to_display))
