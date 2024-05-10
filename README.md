@@ -48,4 +48,13 @@ The tool's design ensures a user-friendly experience for efficiently conducting 
 ![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/fdf86ed3-c551-4b53-93b7-43d24c45a2be)
 
 # Changelog
-- 2024-05-10 Added the functionality to maintain a shuffled set without getting the same set twice until you have voted on each image.
+- 2024-05-10
+   - Fixed bug with the viewing starting at the wrong index.
+   - Can now maintain a shuffled set without getting the same set twice until you have voted on each image.
+   - Added option to skip voting.
+ 
+# Todo
+- Add option on the index page to choose mode.
+  - Single Vote (as it is now)
+  - Multi Vote (multiple images can be voted on, manually go to the next vote).
+  - Last Image Standing (https://github.com/MNeMoNiCuZ/ABTester/issues/1)
