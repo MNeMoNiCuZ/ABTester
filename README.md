@@ -49,11 +49,12 @@ The tool's design ensures a user-friendly experience for efficiently conducting 
 
 # Changelog
 - 2024-05-10
-   - Fixed bug with the viewing starting at the wrong index.
    - Can now maintain a shuffled set without getting the same set twice until you have voted on each image.
    - Added option to skip voting.
+   - Now displays the current voting round values at the bottom.
  
 # Todo
+- Fix bug with the viewing starting at the wrong index the first round of voting.
 - Add option on the index page to choose mode.
   - Single Vote (as it is now)
   - Multi Vote (multiple images can be voted on, manually go to the next vote).
