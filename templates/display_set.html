@@ -33,6 +33,14 @@
 <body>
     <input type="hidden" id="stats_visibility" name="stats_visibility" value="{{ stats_visibility }}">
     <div id="menu-bar"></div>
+
+    <!-- Message display for reshuffling -->
+    {% if message %}
+    <div class="message-container">
+        <p class="info-message">{{ message }}</p>
+    </div>
+    {% endif %}
+
     <div id="image-grid">
         {% for set_number, img in images_and_set_numbers %}
             <div class="image-container">
@@ -47,12 +55,17 @@
 
 <!-- Button menu and stats wrapped in a container -->
 <div id="button-stats-container">
+  <div id="set-counter">
+    <p>Viewed Set Count: {{ set_viewed_count }} / {{ total_sets }}</p>
+  </div>
     <!-- New wrapper for buttons -->
     <div class="button-wrapper">
-        <a href="{{ url_for('index') }}"><button>Restart</button></a>
-        <button onclick="toggleSets()">Toggle Set Numbers</button>
-        <button onclick="toggleStats()">Toggle Results</button>
+      <a href="{{ url_for('display_set') }}"><button>Skip</button></a>  <!-- New Skip button -->
+      <a href="{{ url_for('index') }}"><button>Restart</button></a>
+      <button onclick="toggleSets()">Toggle Set Numbers</button>
+      <button onclick="toggleStats()">Toggle Results</button>
     </div>
+   
 
     <!-- Collapsible stats section -->
     <div id="stats-display" style="display:none;">
