@@ -46,3 +46,6 @@ The tool's design ensures a user-friendly experience for efficiently conducting 
 ![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/2bb9eb42-e0f8-426e-87dd-13cf50a8c0a4)
 ![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/2e7842ab-6e56-40c4-8934-7c1825814d9b)
 ![image](https://github.com/MNeMoNiCuZ/ABTester/assets/60541708/fdf86ed3-c551-4b53-93b7-43d24c45a2be)
+
+# Changelog
+- 2024-05-10 Added the functionality to maintain a shuffled set without getting the same set twice until you have voted on each image.
