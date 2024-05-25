@@ -56,6 +56,7 @@ The tool's design ensures a user-friendly experience for efficiently conducting 
 # Todo
 - Fix bug with the viewing starting at the wrong index the first round of voting.
 - Add display of EXIF metadata (optional type, like prompt)
+- Add a way to remove a set of images from the dataset. It should move them to a 'removed' folder.
 - Add option on the index page to choose mode.
   - Single Vote (as it is now)
   - Multi Vote (multiple images can be voted on, manually go to the next vote).
